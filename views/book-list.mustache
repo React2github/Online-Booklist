@@ -1,0 +1,29 @@
+<!doctype html> 
+<html>
+<head>
+<link type='stylesheet' href="style.css">
+<title>Book List </title>
+</head>
+<body>
+
+<h1>Book list page</h1>
+
+<table>
+{{#books}}
+   <tr>
+      <td>{{userId}}</td>
+      <td>{{name}}</td>
+      <td>{{authors}}</td>
+      <td><a href="/book/edit/{{bookid}}">Edit</a></td>
+      <td><a href="/book/add">Add</a></td>
+      <td>
+      <form method="POST" action="book/delete/{{bookid}}">
+      <button type="submit">Delete</button>
+      </form>
+      </td>
+   </tr>
+{{/books}}
+</table>
+
+</body>
+</html>
